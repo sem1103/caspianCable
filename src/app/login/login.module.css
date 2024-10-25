@@ -1,0 +1,91 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+  }
+  
+  .title {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 56px;
+  }
+  
+  .subtitle {
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 46px;
+  }
+  
+  .inputs {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+  
+  .input_1 {
+    height: 226px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .input {
+    width: 513px;
+    height: 60px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 19px 33px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    border-width: 0.6px;
+  }
+  
+  ::placeholder {
+    color: #ABABAB;
+  }
+  
+  .label {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 42px;
+    font-weight: 500;
+  }
+  
+  .button {
+    width: 306px;
+    height: 60px;
+    border-radius: 6px;
+    font-size: 20px;
+    background-color: var(--background-color);
+    color: #FFFFFF;
+    line-height: 27px;
+    margin: 15px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .registration {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 15px;
+    height: 100px;
+    align-items: center;
+  }
+  
+  .registration p {
+    font-weight: 400;
+  }
+  
+  .registration a {
+    font-weight: 700;
+  }
+  

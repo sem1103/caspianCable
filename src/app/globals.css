@@ -1,5 +1,6 @@
 :root {
-  
+  --background-color: #E8382E;
+
 }
 
 html {
@@ -168,11 +169,10 @@ svg path {
 
 
 
-.container,
+/* .container,
 .mini__container {
-  max-width: 1520px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 10px;
-}
-
+} */
 
