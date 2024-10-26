@@ -1,0 +1,85 @@
+.footer{
+    background: #fff;
+    & .top__footer{
+        margin: clamp(35px, 3vw, 50px) clamp(50px, 3vw, 88px) 58px clamp(50px, 3vw, 88px);
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-wrap: wrap;
+        gap: 30px 15px;
+    }
+    & .logo img{
+        max-width: clamp(140px, 3vw, 200px);
+    }
+
+    & .right{
+        display: flex;
+        padding: 22px 0 0 0 ;
+        gap: clamp(50px, 7vw, 120px);
+
+        & ul{
+            & li{
+                font: 18px Helvetica;
+                margin: 0 0 18px 0;
+                color: #000;
+
+            }
+            & li:first-child{
+                margin: 0 0 30px 0;
+                color: #0A142F;
+                font-weight: 700;
+            }
+        }
+    }
+
+    & form{
+        margin: clamp(20px, 4vw, 40px) 0 0 0;
+        &:focus-within {
+            & > div{
+                box-shadow: 0 0 10px #625f68a7;
+            }
+          }
+        & h5{
+            font: clamp(16px, 3vw, 20px) Helvetica;
+            color: #5F6677;
+            margin: 0 0 clamp(5px, 3vw, 15px) 0;
+        }
+
+        & div{
+            transition: all .4s ease-in-out;
+            padding: 8px 20px;
+            border: 1px solid #00007C33;
+            border-radius: 30px;
+            display: flex;
+            gap: clamp(20px, 4vw, 60px);
+            align-items: center;
+            & input{
+                font: 14px Helvetica;
+                color: #0A142F;
+                border: 0;
+                outline: 0;
+            }
+
+            
+        }
+    }
+
+    .bottom__footer{
+        padding: clamp(35px, 3vw, 46px) clamp(50px, 3vw, 88px);
+        background: var(--primaryColor);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        flex-wrap: wrap;
+        gap: 25px;
+        & .soc__icons{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        & h6{
+            font: 16px Helvetica;
+        }
+    }
+}

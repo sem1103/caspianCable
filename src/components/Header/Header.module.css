@@ -1,0 +1,202 @@
+.header{
+    position: sticky;
+    top: 0;
+    padding:  13px clamp(25px, 3vw, 50px);
+    background-color: #fff;
+    & nav > ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(37px, 3vw, 52px);
+       & > li{
+        position: relative;
+        padding: 12px 0;
+        & svg{
+            transition: all .4s ease-in-out;
+        }
+        &:hover {
+            & > a, & > span{
+                &::after{
+                    width: 100%;
+                }
+            }
+            & .submenu{
+                opacity: 1;
+                pointer-events: all;
+            }
+            & svg{
+                transform: rotate(180deg);
+            }
+        }
+        & > a, & > span{
+            position: relative;
+            white-space: nowrap;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background: var(--primaryColor);
+                transition: all .4s ease-in-out;
+            }
+           
+        }
+       }
+       & .submenu{
+        position: absolute;
+        padding: 12px 14px;
+        border-radius: 5px;
+        background: var(--primaryColor);
+        top: 100%;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .4s ease-in-out;
+        z-index: 1;
+        & a{
+            font-size: 14px;
+            font-weight: 400;
+            color: #fff;
+            margin: 0 0 8px 0;
+            &:last-child{
+                margin: 0;
+            }
+        }
+       }
+        & a, &  li{
+            font: 700 clamp(18px, 2vw, 20px) Helvetica;
+            color: var(--primaryColor);
+            cursor: pointer;
+        }
+        & span{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+    
+
+    & .langs{
+        background: var(--primaryColor);
+        padding: 4px 11px;
+        border-radius: 5px;
+        color: #fff;
+        & span::after{
+            display: none;
+        }
+    }
+
+    & .logo{
+        
+        & img{
+            width: clamp(46px, 5vw, 76px);
+            margin: auto;
+        }
+        & a::after{
+            display: none;
+        }
+    }
+
+    & .mob__logo{
+        display: none;
+        margin: auto;
+    }
+
+    & .burger__btn{
+        display: none;
+    }
+}
+
+@media (width < 1150px) {
+    .header{
+        & .mob__logo{
+            display: table;
+        }
+        & nav{
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            padding: 45px;
+            backdrop-filter: blur(10px);
+            background: #cccccc3c;
+            transition: all .4s ease-in-out;
+            & > ul{
+                flex-direction: column;
+                align-items: start;
+                gap: 10px;
+                overflow: auto;
+                justify-content: start;
+                height: 100%;
+                & .logo{
+                    display: none;
+                }
+            }
+        }
+
+        & .burger__btn{
+            display: initial;
+            position: absolute;
+            top: 13px;
+            right: 13px;
+            width: 30px;
+            height: 40px;
+            z-index: 99;
+           & button{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            & span{
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background: #9c9c9c;
+                top: 25%;
+                left: 0;
+                border-radius: 6px;
+                transition: all .4s ease-in-out;
+                &:nth-child(2){
+                    top: 50%;
+                }
+                &:nth-child(3){
+                    top: 75%;
+                }
+            }
+           }
+        }
+
+        &.active{
+            & nav{
+                left: 0;
+            }
+            & .burger__btn{
+                & span{
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    background: var(--primaryColor);
+                    top: 50%;
+                    left: 0;
+                    border-radius: 6px;
+                    transform: rotate(45deg);
+                    box-shadow: 0 0 10px var(--primaryColor);
+                    &:nth-child(2){
+                        width: 0;
+                    }
+                    &:nth-child(3){
+                        top: 50%;
+                        transform: rotate(-45deg);
+                    }
+                }
+               
+            }
+        }
+        
+    }
+}
+
+
