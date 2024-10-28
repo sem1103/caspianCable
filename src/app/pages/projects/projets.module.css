@@ -26,7 +26,7 @@
         margin-top: -12px;
 
         &>.img {
-            height: clamp(105px, 20vw, 400px);
+            height: clamp(105px, 17vw, 500px);
             border-radius: 10px 10px 0 0;
 
 
