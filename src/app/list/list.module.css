@@ -27,13 +27,14 @@
             justify-content: space-between;
             align-items: center;
             width: clamp(250px, 5vw, 500px);
+
             & input[type="checkbox"] {
                 background-color: #F1F1F1;
                 width: 20px;
                 height: 20px;
                 /* position: relative; */
             }
-           
+
 
             /* & input[type="checkbox"]:checked {
                 background-color: #F1F1F1;
@@ -68,34 +69,37 @@
         margin: clamp(10px, 9vw, 60px) auto 0;
         padding: clamp(10px, 15px, 20px) clamp(10px, 15px, 20px);
         border-radius: 6px;
-     & .contact_data{
-        width:clamp(350px, 90vw, 940px);
-        display: flex;
-        justify-content: space-around;
-     
-        & .inform_box {
+
+        & .contact_data {
+            width: clamp(350px, 90vw, 940px);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            & input {
-                width: clamp(230px, 20vw, 240px);
-                height: clamp(30px, 1vw, 50px);
-                background-color: #F1F1F1;
-                outline: none;
-                border: none;
-                font-size: clamp(12px, 14px, 16px);
-            }
+            justify-content: space-around;
 
-            & label {
-                font-size: 16px;
-                line-height: clamp(26px, 3vw, 20px);
+            & .inform_box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
 
-                & .required {
-                    color: #E8382E;
+                & input {
+                    width: clamp(230px, 20vw, 240px);
+                    height: clamp(30px, 1vw, 50px);
+                    background-color: #F1F1F1;
+                    outline: none;
+                    border: none;
+                    font-size: clamp(12px, 14px, 16px);
+                }
+
+                & label {
+                    font-size: 16px;
+                    line-height: clamp(26px, 3vw, 20px);
+
+                    & .required {
+                        color: #E8382E;
+                    }
                 }
             }
         }
-    }
+
         & .confirm {
             width: clamp(230px, 22vw, 240px);
             background-color: #E8382E;
@@ -105,17 +109,18 @@
             color: white;
             margin-top: clamp(8px, 12px, 15px);
         }
-    
+
     }
 }
 
 @media(width<800) {
     .sec_card {
         flex-direction: column;
-        & .contact_data{
-flex-direction: column;    
-align-items: center; 
- }
+
+        & .contact_data {
+            flex-direction: column;
+            align-items: center;
+        }
 
     }
 }

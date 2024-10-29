@@ -3,7 +3,6 @@ export default function Laboratory() {
   return (
     <div className={s.lab_inner}>
       <div className={s.video_container}>
-        <img src="/assets/img/gallery2.png" alt="err" />
         <iframe id="youtubeVideo"
           src="https://www.youtube.com"
           title="YouTube video"
