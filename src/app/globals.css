@@ -162,26 +162,29 @@ button {
   margin: 0;
   padding: 0;
   background: none;
-  &.btn{
-    padding: clamp(10px, 3vw, 16px) clamp(60px, 7vw, 117px);
-    color: var(--primaryColor);
-    border: 2px solid var(--primaryColor);
-    border-radius: 10px;
-    transition: all .4s ease-in-out;
-    margin: 0 auto;
-    display: block;
-    font: 700 clamp(16px, 2vw, 20px) Helvetica;
-    &.btn__bg{
-      background: var(--primaryColor);
-      color: #fff;
-      border-color: transparent;
-    }
-    &:hover{
-      box-shadow: 0 0 10px var(--primaryColor);
-      transform: translateY(-2px);
-    }
-  }
+
   
+}
+
+.btn{
+  padding: clamp(10px, 3vw, 16px) clamp(60px, 7vw, 117px);
+  color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  border-radius: 10px;
+  transition: all .4s ease-in-out;
+  margin: 0 auto;
+  display: table;
+  font: 700 clamp(16px, 2vw, 20px) Helvetica;
+  white-space: nowrap;
+  &.btn__bg{
+    background: var(--primaryColor);
+    color: #fff;
+    border-color: transparent;
+  }
+  &:hover{
+    box-shadow: 0 0 10px var(--primaryColor);
+    transform: translateY(-2px);
+  }
 }
 
 svg path {
@@ -197,6 +200,12 @@ svg path {
 
 .container {
   max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.main__container{
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 10px;
 }

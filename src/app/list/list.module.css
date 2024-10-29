@@ -1,0 +1,80 @@
+.list {
+    padding: clamp(20px, 3vw, 50px) 0 clamp(60px, 3vw, 88px);
+
+    & .card {
+        display: flex;
+        justify-content: space-between;
+        max-width: clamp(300px, 90vw, 1240px);
+        min-height: 10vw;
+        border-radius: 6px;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 clamp(30px, 4vw, 50px);
+        background-color: #FFFFFF;
+        margin: clamp(5px, 3vw, 60px) auto 0;
+
+        & .card_items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: clamp(300px, 7vw, 700px);
+           &input .custom_checkbox{
+            background-color: red; 
+            appearance: none;
+           }
+           & input[type="checkbox"]:checked{
+            background-color: green;
+           }
+            & img {
+                max-width: clamp(100px, 2vw, 300px);
+                max-height: clamp(80px, 3vw, 139px);
+            }
+        }
+    }
+
+    & .sec_card {
+        max-width: clamp(300px, 90vw, 1240px);
+        min-height: 10vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #FFFFFF;
+        margin: clamp(5px, 3vw, 60px) auto 0;
+        padding: clamp(10px, 15px, 20px) clamp(10px, 15px, 20px);
+        border-radius: 6px;
+
+        & .inform_box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+
+            & input {
+                width: 100%;
+                height: clamp(30px, 1vw, 50px);
+                background-color: #F1F1F1;
+                outline: none;
+                border: none;
+                font-size: clamp(12px, 14px, 16px);
+            }
+
+            & label {
+                font-size: 16px;
+                & .required {
+                    color: #E8382E;
+                }
+            }
+        }
+
+        & .confirm {
+            width: clamp(150px, 17vw, 300px);
+            background-color: #E8382E;
+            font: 700 clamp(14px, 3vw, 16px) Helvetica;
+            padding: clamp(8px, 14px, 15px);
+            border-radius: 6px;
+            color: white;
+            margin-top: clamp(8px, 12px, 15px);
+        }
+    }
+}

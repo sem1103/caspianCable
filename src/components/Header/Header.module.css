@@ -4,6 +4,7 @@
     z-index: 99;
     padding:  13px clamp(25px, 3vw, 50px);
     background-color: #fff;
+    transition: all .3s ease-in-out;
     & nav > ul{
         display: flex;
         align-items: center;
@@ -25,7 +26,7 @@
                 opacity: 1;
                 pointer-events: all;
             }
-            & svg{
+            & span svg{
                 transform: rotate(180deg);
             }
         }
@@ -90,7 +91,7 @@
 
     & .logo{
         
-        & img{
+        & svg{
             width: clamp(46px, 5vw, 76px);
             margin: auto;
         }
@@ -107,6 +108,43 @@
     & .burger__btn{
         display: none;
     }
+
+    &.fixed__bg{
+        position: absolute;
+        width: 100%;
+        background: transparent;
+        z-index: 9999;
+
+        & a, &  li, & span{
+           
+            color: #fff;
+       
+            &::after{
+                background-color: #fff;
+            }
+        }
+
+        &  path{
+            fill: #fff;
+        }
+        & .langs{
+            background: #fff;
+           & span{
+            color: var(--primaryColor);
+           }
+            & path{
+                fill: var(--primaryColor);
+            }
+        }
+
+        & .submenu{
+            background: #fff;
+            & a{
+                color: #000;
+            }
+        }
+
+    }
 }
 
 @media (width < 1150px) {
@@ -119,7 +157,7 @@
             top: 0;
             left: -100%;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             padding: 45px;
             backdrop-filter: blur(10px);
             background: #cccccc3c;
@@ -194,6 +232,20 @@
                     }
                 }
                
+            }
+        }
+        &.blur__bg {
+            backdrop-filter: blur(10px);
+            background: #0000004e;
+            & nav{
+                background: #504f4fe6;
+            }
+        }
+        &.fixed__bg{
+            position: fixed;
+            
+            & .burger__btn span{
+                background: #ffffff;
             }
         }
         

@@ -1,7 +1,7 @@
 .footer{
     background: #fff;
     & .top__footer{
-        margin: clamp(35px, 3vw, 50px) clamp(50px, 3vw, 88px) 58px clamp(50px, 3vw, 88px);
+        margin: clamp(35px, 3vw, 50px) clamp(30px, 3vw, 88px) 58px clamp(30px, 3vw, 88px);
         display: flex;
         justify-content: space-between;
         align-items: start;
