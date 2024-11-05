@@ -7,25 +7,25 @@ const News = () => {
         <div className={s.news_wrapper}>
         <div className={s.news_header}>
           <img className={s.image_7} src="assets/img/image 7.png" alt="err" />
-          {/* <h6>Bill Gates pandemiyanın nə vaxt bitəcəyi ilə bağlı proqnoz verdi</h6> */}
+          <h6>Bill Gates pandemiyanın nə vaxt bitəcəyi ilə bağlı proqnoz verdi</h6>
         </div>
         <div className={s.news_header}>
         <img className={s.cover} src="assets/img/cover.png" alt="" />
-        {/* <h6>Caspian Cable Systems ilə Azərbaycan Texniki Universiteti arasında əməkdaşlıq memorandumu imzalanıb</h6> */}
+        <h6>Caspian Cable Systems ilə Azərbaycan Texniki Universiteti arasında əməkdaşlıq memorandumu imzalanıb</h6>
         </div>
        
         <div className={s.news_header}>
         <img className={s.feat_4} src="assets/img/feat-4.png" alt="" />
-        {/* <h6>Bitkilər ilə insanlar arasında əlaqə qurmaq mümkündür     <br />             (Araşdırma).</h6> */}
+        <h6>Bitkilər ilə insanlar arasında əlaqə qurmaq mümkündür     <br />             (Araşdırma).</h6>
         </div>
         <div className={s.news_header}>
         <img className={s.feat} src="assets/img/feat.png" alt="" />
-        {/* <h6>Caspian Cable Systems ilə Azərbaycan Texniki Universiteti arasında əməkdaşlıq memorandumu imzalanıb</h6> */}
+        <h6>NASA-nın kosmik cihazı bu gecə Marsa eniş edəcək</h6>
         </div>
         </div>
         <div className={s.news_header}>
         <img className={s.image_9} src="assets/img/image 9.png" alt="" />
-        {/* <h6>SpaceX-in Starship kosmik gəmisi yerə eniş etdikdən sonra partlayıb (VİDEO)</h6> */}
+        <h6>SpaceX-in Starship kosmik gəmisi yerə eniş etdikdən sonra partlayıb (VİDEO)</h6>
         </div>
       </div>
       <div className={s.news_cards}>

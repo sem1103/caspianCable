@@ -1,129 +1,144 @@
 .news_page {
-    margin: clamp(5px, 3vw, 60px) auto 0;
-    background-color: var(--mainBackground);
-
-    & .news_box {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        & .news_wrapper{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-        
-        & .news_header {
-            height: 350px;
-          & .image_7{
-            width:clamp(200px,40vw,597px);
-            height:clamp(200px,40vw,450px);
-            object-fit: contain;
-            position: relative;
-            padding-bottom:clamp(20px,20vw,80px)
-          } 
-          & .feat_4{
-            width:clamp(200px,40vw,597px);
-            height:clamp(240px,40vw,400px);
-            object-fit: contain;
-            position: relative;
+  margin: clamp(5px, 3vw, 60px) auto 0;
+  background-color: var(--mainBackground);
 
 
-          }
-          & .cover{
-            width:clamp(200px,30vw,471px);
-            height:clamp(240px,45vw,450px);
-            object-fit: contain;
-            padding-bottom: clamp(5px,10vw,130px);
+  & .news_box {
+    display: flex;
+    justify-content: space-between;
 
-          }
-          & .feat{
-            width:clamp(200px,30vw,471px);
-            height:clamp(240px,45vw,380px);
-            object-fit: contain;
-          }
-          & h6{
-            /* position: absolute; */
-            max-width: clamp(200px,26vw,350px);
-            color:#FFFFFF;
-            /* bottom:90px; */
-            padding-left: 10px;
-            position: relative;
+    & .news_wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1025px;
 
-          }
+      & .news_header {
+
+        position: relative;
+
+        & .image_7 {
+          width: clamp(200px, 42vw, 597px);
+          height: clamp(200px, 30vw, 300px);
         }
-    }
-    &  .news_header{
 
-    & .image_9{
-        width:clamp(200px,25vw,300px);
+        & .feat_4 {
+          width: clamp(200px, 42vw, 597px);
+          height: clamp(150px, 20vw, 230px);
+
+
+        }
+
+        & .cover {
+          width: clamp(200px, 31vw, 471px);
+          height: clamp(200px, 20vw, 300px);
+
+        }
+
+        & .feat {
+          width: clamp(200px, 31vw, 471px);
+          height: clamp(220px, 28vw, 250px);
+          margin-top: -20px;
+        }
+
+        &>h6 {
+          position: absolute;
+          width: clamp(200px, 46vw, 530px);
+          color: #FFFFFF;
+          padding-left: 10px;
+          top: 70%;
+          font-size: clamp(14px,18px,23px);   
+
+        }
+      }
+    }
+
+    & .news_header {
+         position: relative;
+      & .image_9 {
+        width: clamp(200px, 30vw, 300px);
+        height: clamp(220px, 40vw, 533px);
+        object-fit: fill;
+
+      }
+
+      & h6 {
+        position: absolute;
+        width: clamp(200px, 26vw, 350px);
+        color: #FFFFFF;
+        top: 70%;
+        font-size: clamp(14px,16px,20px);   
+         }
+    }
+
+  }
+
+  & .news_cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: clamp(300px, 80vw, 1000px);
+    margin: clamp(5px, 3vw, 60px) auto 0;
+
+    & .news_card {
+      width: clamp(250px, 33vw, 500px);
+      height: auto;
+      margin: clamp(5px, 2vw, 50px) 0;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      position: relative;
+
+      & .news_img {
+        position: relative;
+        top: 0;
         object-fit: contain;
 
-     }
-     & h6{
-        /* position: absolute;
-        width: clamp(200px,26vw,350px);
-        color:#FFFFFF;
-        top: 0; */
-      }
-      }
-}
 
-    & .news_cards {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        max-width: clamp(300px, 80vw, 1000px);
-        margin: clamp(5px, 3vw, 60px) auto 0;
-
-        & .news_card {
-            width: clamp(250px, 33vw, 500px);
-            height: auto;
-            margin: clamp(5px, 2vw, 50px) 0;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            border-radius: 10px;
-            position: relative;
-
-            & .news_img {
-                position: relative;
-                top: 0;
-                object-fit: contain;
+        & img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px 10px 0 0;
 
 
-                & img {
-                    width: 100%;
-                    height: auto;
-                    border-radius: 10px 10px 0 0;
-
-
-                }
-            }
-
-            & .card_title {
-                font-family: Helvetica;
-                width: clamp(250px, 33vw, 620px);
-                height: clamp(60px, 14vw, 120px);
-                padding: 0 clamp(2px, 1vw, 8px);
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                align-items: center;
-
-                & h6 {
-                    font-size: clamp(12px, 2vw, 20px);
-                    font-weight: 600;
-                    line-height: clamp(12px, 2vw, 20px);
-                }
-
-                & p {
-                    font-size: clamp(9px, 10px, 11px);
-                    color: #625F68;
-                    font-weight: 400;
-                    line-height: clamp(12px, 15px, 34px);
-
-                }
-            }
         }
+      }
+
+      & .card_title {
+        font-family: Helvetica;
+        width: clamp(250px, 33vw, 620px);
+        height: clamp(60px, 14vw, 120px);
+        padding: 0 clamp(2px, 1vw, 8px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        & h6 {
+          font-size: clamp(12px, 2vw, 20px);
+          font-weight: 600;
+          line-height: clamp(12px, 2vw, 20px);
+        }
+
+        & p {
+          font-size: clamp(9px, 10px, 11px);
+          color: #625F68;
+          font-weight: 400;
+          line-height: clamp(12px, 15px, 34px);
+
+        }
+      }
     }
+  }
 }
+ @media (width<1200)  {
+  .news_page{
+    & .news_box{
+      flex-direction: column;
+      &.news_wrapper{
+        flex-direction: column;
+      }
+    }
+  }
+ }
