@@ -1,54 +1,127 @@
 .news_page {
-    background-color: red;
+    margin: clamp(5px, 3vw, 60px) auto 0;
+    background-color: var(--mainBackground);
 
     & .news_box {
-        background-color: green;
-
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .news_wrapper{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        
         & .news_header {
-            background-color: aqua;
+            height: 350px;
+          & .image_7{
+            width:clamp(200px,40vw,597px);
+            height:clamp(200px,40vw,450px);
+            object-fit: contain;
+            position: relative;
+            padding-bottom:clamp(20px,20vw,80px)
+          } 
+          & .feat_4{
+            width:clamp(200px,40vw,597px);
+            height:clamp(240px,40vw,400px);
+            object-fit: contain;
+            position: relative;
+
+
+          }
+          & .cover{
+            width:clamp(200px,30vw,471px);
+            height:clamp(240px,45vw,450px);
+            object-fit: contain;
+            padding-bottom: clamp(5px,10vw,130px);
+
+          }
+          & .feat{
+            width:clamp(200px,30vw,471px);
+            height:clamp(240px,45vw,380px);
+            object-fit: contain;
+          }
+          & h6{
+            /* position: absolute; */
+            max-width: clamp(200px,26vw,350px);
+            color:#FFFFFF;
+            /* bottom:90px; */
+            padding-left: 10px;
+            position: relative;
+
+          }
         }
     }
+    &  .news_header{
+
+    & .image_9{
+        width:clamp(200px,25vw,300px);
+        object-fit: contain;
+
+     }
+     & h6{
+        /* position: absolute;
+        width: clamp(200px,26vw,350px);
+        color:#FFFFFF;
+        top: 0; */
+      }
+      }
+}
 
     & .news_cards {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        max-width: clamp(300px, 80vw, 1000px);
+        margin: clamp(5px, 3vw, 60px) auto 0;
 
         & .news_card {
-            width: clamp(220px, 33vw, 560px);
-            height: clamp(220px,25vw, 590px);
-            margin: clamp(5px, 3vw, 60px) auto 0;
+            width: clamp(250px, 33vw, 500px);
+            height: auto;
+            margin: clamp(5px, 2vw, 50px) 0;
             background-color: white;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;            
-            border-radius: 6px;
-            & img {
-                width: clamp(220px, 33vw, 560px);
-                height: auto;
-                height: auto;
-                object-fit: contain;
-                border-radius: 6px 6px 0 0;
+            border-radius: 10px;
+            position: relative;
 
+            & .news_img {
+                position: relative;
+                top: 0;
+                object-fit: contain;
+
+
+                & img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px 10px 0 0;
+
+
+                }
             }
-            & .card_title{
+
+            & .card_title {
                 font-family: Helvetica;
-                width: clamp(200px,33vw,620px);
-                height: clamp(80px,10vw,100px);
+                width: clamp(250px, 33vw, 620px);
+                height: clamp(60px, 14vw, 120px);
+                padding: 0 clamp(2px, 1vw, 8px);
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                h6{
-                    font-size: clamp(12px,1vw,16px);
+                align-items: center;
+
+                & h6 {
+                    font-size: clamp(12px, 2vw, 20px);
                     font-weight: 600;
+                    line-height: clamp(12px, 2vw, 20px);
                 }
-                p{
-                    font-size: clamp(9px,1vw,12px);
-                    color:#625F68;
+
+                & p {
+                    font-size: clamp(9px, 10px, 11px);
+                    color: #625F68;
                     font-weight: 400;
-                    line-height:clamp(12px,1vw,24px);
- 
+                    line-height: clamp(12px, 15px, 34px);
+
                 }
             }
         }
