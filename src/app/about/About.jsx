@@ -1,9 +1,24 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import s from './about.module.css'
-import Link from 'next/link'
+import { useRef } from 'react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+
 const About = () => {
+  // const swiperRef = useRef(null);
+
+ 
+
+  
+  
   return (
     <div className={s.about_page}>
       <section className={s.about_section_1}>
@@ -26,73 +41,119 @@ const About = () => {
       </section>
       <section className={s.about_section_2}>
         <div className={s.about_mission}>
-       <div className={s.mission_box}>
-        <div className={s.boxes}></div>
-       <img src="/assets/img/missiya.png" alt="" />
-       <h6 className={s.title}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </h6>
-       </div>
-        <div className={s.mission_box}>
-        <div className={s.boxes}></div>
-        <img src="/assets/img/missiya 2.png" alt="" />
-        <h5 className={s.vision}>Vizyon</h5>
-        </div>
+          <div className={s.mission_box}>
+            <div className={s.boxes}></div>
+            <img src="/assets/img/missiya.png" alt="" />
+            <h6 className={s.title}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </h6>
+          </div>
+          <div className={s.mission_box}>
+            <div className={s.boxes}></div>
+            <img src="/assets/img/missiya 2.png" alt="" />
+            <h5 className={s.vision}>Vizyon</h5>
+          </div>
         </div>
       </section>
       <section className={s.about_section_3} >
-      <Swiper
-            className={s.partners__slider}
-            spaceBetween={50}
-            slidesPerView={2}
-            loop={true}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => {             
-              swiperRef.current = swiper;
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 50,
-              },
-            }}
-          >
-            <SwiperSlide className={s.slide}>
-              <Link href='/'>
-                <img src="/assets/img/partner1.png" alt="" />
-              </Link>
-            </SwiperSlide>
+      <h1>Ətraf mühit siyasəti</h1>
+        <Swiper className={s.swiper}
+          modules={[ Pagination, A11y]}
+          spaceBetween={80}
+          slidesPerView={4}
+          pagination={{ clickable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+        >
+          <SwiperSlide><div className={s.slider_box}></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}></div></SwiperSlide>
 
-            <SwiperSlide className={s.slide}>
-              <Link href='/'>
-                <img src="/assets/img/partner2.png" alt="" />
-              </Link>
-            </SwiperSlide>
+        </Swiper>
 
-            <SwiperSlide className={s.slide}>
-              <Link href='/'>
-                <img src="/assets/img/partner3.png" alt="" />
-              </Link>
+      </section>
+      <section className={s.about_section_4} >
+        <Swiper className={s.swiper}
+          modules={[ Pagination, A11y]}
+          spaceBetween={80}
+          slidesPerView={4}
+          pagination={{ clickable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+        >
+          <SwiperSlide>
+            <div className={s.slider_box}>
+            <div className={s.slider_image}>
+            <img src="/assets/img/image.png" alt="" />
+            </div>
+            <div className={s.slider_title}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            </div>
+            <div className={s.slider_customer}>
+                 <h6>Nabatxanım Aşurbəyli</h6>
+                 <p>UI/UX dizayner</p>
+            </div>
+            </div>
             </SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}>
+          <div className={s.slider_image}>
+            <img src="/assets/img/image.png" alt="" />
+            </div>
+            <div className={s.slider_title}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            </div>
+            <div className={s.slider_customer}>
+                 <h6>Nabatxanım Aşurbəyli</h6>
+                 <p>UI/UX dizayner</p>
+            </div></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}>
+          <div className={s.slider_image}>
+            <img src="/assets/img/image.png" alt="" />
+            </div>
+            <div className={s.slider_title}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            </div>
+            <div className={s.slider_customer}>
+                 <h6>Nabatxanım Aşurbəyli</h6>
+                 <p>UI/UX dizayner</p>
+            </div></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}>
+          <div className={s.slider_image}>
+            <img src="/assets/img/image.png" alt="" />
+            </div>
+            <div className={s.slider_title}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            </div>
+            <div className={s.slider_customer}>
+                 <h6>Nabatxanım Aşurbəyli</h6>
+                 <p>UI/UX dizayner</p>
+            </div></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}>
+          <div className={s.slider_image}>
+            <img src="/assets/img/image.png" alt="" />
+            </div>
+            <div className={s.slider_title}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            </div>
+            <div className={s.slider_customer}>
+                 <h6>Nabatxanım Aşurbəyli</h6>
+                 <p>UI/UX dizayner</p>
+            </div></div></SwiperSlide>
+          <SwiperSlide><div className={s.slider_box}>
+          <div className={s.slider_image}>
+            <img src="/assets/img/image.png" alt="" />
+            </div>
+            <div className={s.slider_title}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            </div>
+            <div className={s.slider_customer}>
+                 <h6>Nabatxanım Aşurbəyli</h6>
+                 <p>UI/UX dizayner</p>
+            </div></div></SwiperSlide>
 
-            <SwiperSlide className={s.slide}>
-              <Link href='/'>
-                <img src="/assets/img/partner4.png" alt="" />
-              </Link>
-            </SwiperSlide>
+        </Swiper>
 
-            <SwiperSlide className={s.slide}>
-              <Link href='/'>
-                <img src="/assets/img/partner2.png" alt="" />
-              </Link>
-            </SwiperSlide>
-          </Swiper>
       </section>
     </div>
   )

@@ -46,8 +46,9 @@
             margin: clamp(10px, 8vw, 150px) auto 0;
             display: flex;
             justify-content: space-between;
-            max-width: clamp(300px,80vw,1050px);
-            gap:15px;
+            max-width: clamp(300px, 92vw, 1050px);
+            gap: 15px;
+
             & .mission_box {
                 position: relative;
                 border-radius: 6px;
@@ -104,5 +105,96 @@
         }
 
 
+    }
+
+    & .about_section_3 {
+        max-width: clamp(300px, 100vw, 1050px);
+        margin: clamp(10px, 8vw, 150px) auto 0;
+
+        & h1 {
+            font-size: clamp(20px, 4vw, 40px);
+            line-height: clamp(22px, 35vw, 80px);
+
+        }
+
+        & .swiper {
+            width: clamp(300px, 90vw, 1115px);
+            height: auto;
+
+            & .slider_box {
+                width: clamp(80px, 18vw, 350px);
+                height: clamp(80px, 10vw, 150px);
+                background-color: white;
+
+            }
+
+        }
+
+
+    }
+
+    & .about_section_4 {
+        max-width: clamp(300px, 100vw, 1050px);
+        margin: clamp(10px, 8vw, 150px) auto 0;
+
+        & .swiper {
+            width: clamp(300px, 90vw, 1115px);
+            height: auto;
+            z-index: 1;
+            & .slider_box {
+                width: clamp(80px, 20vw, 350px);
+                height: clamp(80px, 20vw, 150px);
+                background-color: white;
+                border-radius: 12px;
+                position: relative;
+                & .slider_image {
+                    display: flex;
+                    justify-content: center;
+                  
+                    & img {
+                        position: absolute;
+                        z-index: 99;
+                        top:-20px;
+                        width: clamp(20px, 3vw, 50px);
+                        height: clamp(20px, 3vw, 50px);
+                    }
+                }
+
+                & .slider_title {
+                    display: flex;
+                    justify-content: center;
+
+                    p {
+                        text-align: justify;
+                        font-size: 10px;
+                        max-width: 200px;
+                        line-height: clamp(10px, 1vw, 15px);
+
+
+                    }
+                }
+
+                & .slider_customer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    & h6 {
+                        padding-top: clamp(2px,4px,6px);
+                        color: #E8382E;
+                        font-size: 12px;
+                        font-weight: 700;
+
+                    }
+
+                    & p {
+                        font-size: 10px;
+                        line-height: clamp(10px, 2vw, 20px);
+
+                    }
+                }
+            }
+
+        }
     }
 }
