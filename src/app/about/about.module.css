@@ -1,0 +1,35 @@
+.about_page{
+   & .about_section_1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     & .banner_left_side{
+        & .banner_top_img{
+            & img{
+                width: clamp(220px,35vw,679px);
+                height: clamp(200px,30vw,475px);
+                object-fit: fill;
+            }
+        }
+        & .banner_bottom_images{
+            display: flex;
+            justify-content: space-between;
+            max-width: clamp(220px,35vw,679px);
+
+            & img{
+                width: clamp(50px,8vw,200px);
+                height: clamp(40px,6vw,190px);
+            }
+        }
+     }
+    & .banner_right_side{
+        width:clamp(300px,65vw,680px);
+        margin: 0 auto 0 clamp(10px,2vw,20px);
+        & .title{
+            font: clamp(12px, 2vw, 20px) Helvetica;
+            text-align:justify;
+            line-height: clamp(12px,3vw,29px);
+        }
+     }
+   }  
+}
