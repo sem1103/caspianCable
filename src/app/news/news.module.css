@@ -11,7 +11,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      max-width: 1025px;
+      width:1025px;
 
       & .news_header {
 
@@ -46,6 +46,7 @@
           width: clamp(200px, 45vw, 500px);
           color: #FFFFFF;
           padding-left: 10px;
+          bottom: clamp(10px,3vw,35px);
           font-size: clamp(12px, 1.5vw, 18px);
         }
        & .first_text{
@@ -71,6 +72,7 @@
         position: absolute;
         width: clamp(200px, 45vw, 500px);
         color: #FFFFFF;
+        bottom: clamp(10px,3vw,35px);
         padding-left: 10px;
         font-size: clamp(12px, 1.5vw, 18px);
       }
@@ -138,13 +140,3 @@
   }
 }
 
-@media (width<800) {
-  & .news_box {
-    display: block;
-
-    & .news_wrapper {
-      display: block;
-    }
-
-  }
-}
