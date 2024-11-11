@@ -1,5 +1,4 @@
 .form{
- 
   min-height: 100vh;
   padding: clamp(80px, 12vw, 190px) 15px;
   & form{

@@ -1,79 +1,94 @@
 .projects {
+  & .title {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: auto;
-    background-color: #F1F1F1;
+    justify-content: space-between;
 
-    & img {
-        width: clamp(150px, 42vw, 900px);
-        height: clamp(140px, 25vw, 600px);
-        border-radius: 10px;
-        margin: clamp(10px, 2vw, 20px) 0;
+    & h2 {
+      font: 400 clamp(25px, 5vw, 50px) Helvetica;
+      color: #000;
     }
 
-    & .first_image_box {
+    & a {
+      font: clamp(18px, 3vw, 24px) Helvetica;
+      border-bottom: 2px solid #000;
+    }
+  }
+
+  .projects__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: clamp(40px, 5vw, 85px) 0 0 0;
+    padding: 0 0 clamp(20px, 3vw, 60px) 0;
+
+    & .projects__item {
+      width: calc((100% - 67px) /2);
+      border-radius: 12px;
+      overflow: hidden;
+      max-height: 400px;
+      position: relative;
+      transition: all .4s ease-in-out;
+
+      & .proj__info {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
         display: flex;
-        justify-content: center;
-        flex-direction: column;
-        justify-content: center;
-        width: clamp(150px, 42vw, 900px);
-        height: clamp(140px, 25vw, 600px);
-        position: relative;
-        border-radius: 10px 10px 0 0;
-        margin-top: -12px;
+        align-items: center;
+        justify-content: space-between;
+        padding: clamp(14px, 2vw, 23px) 17px;
+        transition: all .4s ease-in-out;
+      }
 
-        &>.img {
-            height: clamp(105px, 17vw, 500px);
-            border-radius: 10px 10px 0 0;
+      &:hover {
+        box-shadow: 0 0 10px 5px #a0a0a0;
 
-
+        & .proj__info {
+          bottom: 0;
         }
+      }
 
-        & .more_content {
-            display: flex;
-            justify-content: space-between;
-            padding: 2px clamp(5px, 2vw, 20px) 0 clamp(5px, 2vw, 20px);
-            width: clamp(150px, 42vw, 900px);
-            align-items: center;
-            background-color: #FFFFFF;
-            border-radius: 0 0 10px 10px;
-            line-height: clamp(4px, 3vw, 34px);
-            margin-top: -20px;
+      & h4 {
+        font: 700 clamp(18px, 2vw, 24px) Helvetica;
+        margin: 0 0 4px 0;
+      }
 
-            & .content {
-                display: flex;
-                justify-content: space-around;
-                flex-direction: column;
+      & p {
+        font: clamp(14px, 2vw, 18px) Helvetica;
+        color: #818080;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
 
-                & h6 {
-                    font-size: clamp(11px, 2vw, 24px);
-                    font-weight: 700;
-                    font-family: Helvetica;
-                    color: #000000;
-                }
-
-                & p {
-                    color: #818080;
-                    font-size: clamp(9px, 2vw, 16px);
-                }
-            }
-
-            & button {
-                width: clamp(20px, 3vw, 33px);
-                height: clamp(20px, 3vw, 33px);
-                border: 1px solid #E8382E;
-                border-radius: 100%;
-                color: #E8382E;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: clamp(14px, 2vw, 22px);
-            }
-        }
-
-
+      & a::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: block;
+      }
     }
+  }
+}
+
+@media (width<800) {
+  .projects__wrapper {
+    flex-direction: column;
+
+    & .projects__item {
+      width: 80%;
+      margin: 0 auto 20px auto;
+
+      & .proj__info {
+        gap: 30px;
+        bottom: 0;
+        background: #ffffff8b;
+        backdrop-filter: blur(5px);
+      }
+    }
+  }
 }
