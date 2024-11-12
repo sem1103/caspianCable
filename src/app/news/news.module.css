@@ -2,83 +2,113 @@
   margin: clamp(5px, 3vw, 60px) auto 0;
   background-color: var(--mainBackground);
 
-
-  & .news_box {
-    display: flex;
-    justify-content: space-between;
-
-    & .news_wrapper {
+    /* & .news_box{
+      .news_wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+          "large large large large"
+          "small1 small2 mid mid"
+          "small3 small4 mid mid";
+        gap: 10px;
+       & .news_header:nth-child(1) {
+          grid-area: large;
+        }
+        
+        & .news_header:nth-child(2) {
+          grid-area: small1;
+        }
+        
+        .news_header:nth-child(3) {
+          grid-area: small2;
+        }
+        
+        .news_header:nth-child(4) {
+          grid-area: small3;
+        }
+        
+     
+        
+        .news_header:nth-child(5) {
+          grid-area: mid;
+        }
+      }
+      
+    
+    } */
+    & .news_box {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      max-width:1025px;
-
-      & .news_header {
-
+      & .news_wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width:1042px;
+        & .news_header {
+  
+          position: relative;
+  
+          & .image_7 {
+            width: clamp(200px, 42vw, 597px);
+            height: clamp(200px, 30vw, 300px);
+          }
+  
+          & .feat_4 {
+            width: clamp(200px, 42vw, 597px);
+            height: clamp(150px, 20vw, 230px);
+  
+  
+          }
+  
+          & .cover {
+            width: clamp(200px, 33.9vw, 489px);
+            height: clamp(200px, 20vw, 300px);
+  
+          }
+  
+          & .feat {
+            width: clamp(200px, 33.9vw, 489px);
+            height: clamp(220px, 28vw, 255px);
+            margin-top: -25px;
+          }
+  
+          & .first_text, .sec_text, .third_text, .fourth_text{
+            position: absolute;
+            width: clamp(200px, 44vw, 400px);
+            color: #FFFFFF;
+            padding-left: 10px;
+            bottom: clamp(10px,3vw,35px);
+            line-height: clamp(10px,2vw,20px);
+            font-size: clamp(12px, 1.5vw, 18px);
+          }
+      
+        
+        }
+      }
+  
+      & .news_head {
         position: relative;
-
-        & .image_7 {
-          width: clamp(200px, 42vw, 597px);
-          height: clamp(200px, 30vw, 300px);
+  
+        & .image_9 {
+          width: clamp(200px, 30vw, 303px);
+          height: clamp(220px, 40vw, 533px);
+          object-fit: fill;
+  
         }
-
-        & .feat_4 {
-          width: clamp(200px, 42vw, 597px);
-          height: clamp(150px, 20vw, 230px);
-
-
-        }
-
-        & .cover {
-          width: clamp(200px, 31vw, 471px);
-          height: clamp(200px, 20vw, 300px);
-
-        }
-
-        & .feat {
-          width: clamp(200px, 31vw, 471px);
-          height: clamp(220px, 28vw, 250px);
-          margin-top: -20px;
-        }
-
-        & .first_text, .sec_text, .third_text, .fourth_text{
+  
+        & .fifth_text {
           position: absolute;
-          width: clamp(200px, 45vw, 500px);
+          width: clamp(200px, 37vw, 300px);
           color: #FFFFFF;
-          padding-left: 10px;
           bottom: clamp(10px,3vw,35px);
+          padding-left: 10px;
           font-size: clamp(12px, 1.5vw, 18px);
-        }
-       & .first_text{
-          margin-top: clamp(8px,3vw,28px);
-        }
-        & .third_text{
-          text-align: center;
+          line-height: clamp(10px,2vw,20px);
         }
       }
+  
     }
-
-    & .news_head {
-      position: relative;
-
-      & .image_9 {
-        width: clamp(200px, 30vw, 300px);
-        height: clamp(220px, 40vw, 533px);
-        object-fit: fill;
-
-      }
-
-      & .fifth_text {
-        position: absolute;
-        width: clamp(200px, 45vw, 500px);
-        color: #FFFFFF;
-        bottom: clamp(10px,3vw,35px);
-        padding-left: 10px;
-        font-size: clamp(12px, 1.5vw, 18px);
-      }
-    }
-
-  }
 
   & .news_cards {
     display: flex;
@@ -125,14 +155,14 @@
         & h6 {
           font-size: clamp(12px, 2vw, 20px);
           font-weight: 600;
-          line-height: clamp(12px, 2vw, 20px);
+          line-height: clamp(11px, 2vw, 20px);
         }
 
         & p {
-          font-size: clamp(9px, 10px, 11px);
+          font-size: clamp(6px, 1vw, 11px);
           color: #625F68;
           font-weight: 400;
-          line-height: clamp(12px, 15px, 34px);
+          line-height: clamp(7px, 1vw, 34px);
 
         }
       }
@@ -140,3 +170,9 @@
   }
 }
 
+@media( width<768px){
+  & .news_box{
+   flex-direction: column;  
+    background-color: red;
+  }
+}
