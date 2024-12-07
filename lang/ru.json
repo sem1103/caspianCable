@@ -1,0 +1,68 @@
+{
+  "header": {
+    "homePage": "Главная страница",
+    "productsPage": "Продукты",
+    "projectsPage": "Проекты",
+    "arg": {
+      "argPage": "AR-G",
+      "laboratoryPage": "Лаборатория",
+      "certificatesPage": "Сертификаты"
+    },
+    "newsPage": "Новости",
+    "blogsPage": "Блоги",
+    "aboutPage": "О нас",
+    "contactPage": "Контакты"
+  },
+  "home": {
+    "introBtn": "Узнать больше",
+    "lastUpdateSection": {
+      "title": "Последние обновления",
+      "update1": "Подкасты",
+      "update2": "Блоги",
+      "update3": "Новости"
+    },
+    "trackOrderSection": {
+      "title": "Отследить заказ!",
+      "order": "Заказ",
+      "deliveryData": "Ожидаемая доставка"
+    },
+    "categoriesSection": {
+      "title": "Категории",
+      "btn": "Смотреть больше"
+    },
+    "toOfferSection": {
+      "uploadBtn": "Загрузить файл",
+      "getOfferBtn": "Получить предложение"
+    },
+    "projectsSecton": {
+      "title": "Проекты",
+      "showAllBtn": "Посмотреть все"
+    },
+    "certificatesSection": {
+      "title": "Сертификаты",
+      "showAllBtn": "Посмотреть все"
+    },
+    "partnersSection": {
+      "title": "Наши партнёры"
+    }
+  },
+  "projectPage": {
+    "title1": "Информация о проекте",
+    "title2": "Галерея"
+  },
+  "footer": {
+    "subscribe": {
+      "title": "Подпишитесь на наши новости!",
+      "placeholder": "Введите ваш email"
+    },
+    "mavigation": {
+      "title": "Полезные ссылки",
+      "nav1": "Карьера",
+      "nav2": "Бренды",
+      "nav3": "FAQ",
+      "nav4": "Политика конфиденциальности",
+      "nav5": "Условия использования"
+    },
+    "copy": "© 2024 Caspian Cable Systems - Все права защищены."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "header": {
+    "homePage": "Ana Sayfa",
+    "productsPage": "Ürünler",
+    "projectsPage": "Projeler",
+    "arg": {
+      "argPage": "AR-G",
+      "laboratoryPage": "Laboratuvar",
+      "certificatesPage": "Sertifikalar"
+    },
+    "newsPage": "Haberler",
+    "blogsPage": "Bloglar",
+    "aboutPage": "Hakkımızda",
+    "contactPage": "İletişim"
+  },
+  "home": {
+    "introBtn": "Daha fazla öğren",
+    "lastUpdateSection": {
+      "title": "Son güncellemeler",
+      "update1": "Podcast'ler",
+      "update2": "Bloglar",
+      "update3": "Haberler"
+    },
+    "trackOrderSection": {
+      "title": "Siparişinizi takip edin!",
+      "order": "Sipariş",
+      "deliveryData": "Beklenen teslimat"
+    },
+    "categoriesSection": {
+      "title": "Kategoriler",
+      "btn": "Daha fazla göster"
+    },
+    "toOfferSection": {
+      "uploadBtn": "Dosya yükle",
+      "getOfferBtn": "Teklif al"
+    },
+    "projectsSecton": {
+      "title": "Projeler",
+      "showAllBtn": "Hepsini göster"
+    },
+    "certificatesSection": {
+      "title": "Sertifikalar",
+      "showAllBtn": "Hepsini göster"
+    },
+    "partnersSection": {
+      "title": "Ortaklarımız"
+    }
+  },
+  "projectPage": {
+    "title1": "Proje Hakkında Bilgi",
+    "title2": "Galeri"
+  },
+  "footer": {
+    "subscribe": {
+      "title": "Abone ol",
+      "placeholder": "E-postanızı girin"
+    },
+    "mavigation": {
+      "title": "Yararlı bağlantılar",
+      "nav1": "Kariyer",
+      "nav2": "Markalar",
+      "nav3": "SSS",
+      "nav4": "Gizlilik Politikası",
+      "nav5": "Kullanım Şartları"
+    },
+    "copy": "© 2024 Caspian Cable Systems - Tüm hakları saklıdır."
+  }
+}

@@ -1,8 +1,13 @@
+'use client'
+
 import Link from 'next/link'
 import s from './Footer.module.css'
+import { useTranslations } from 'next-intl'
 
 
 export default function Footer() {
+    const t = useTranslations('footer')
+
     return (
         <footer className={s.footer}>
             <div className={s.top__footer}>
@@ -11,9 +16,11 @@ export default function Footer() {
                         <img src="/assets/img/footerLogo.png" alt="Logo" />
                     </Link>
                     <form>
-                        <h5>Abunə olun</h5>
+                        <h5>
+                            {t('subscribe.title')}
+                        </h5>
                         <div>
-                            <input type="email" name="email" placeholder='E-mailinizi yazın' />
+                            <input type="email" name="email" placeholder=  {t('subscribe.placeholder')} />
                             <button type='submit'>
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z" fill="#E8382E" />
@@ -48,21 +55,23 @@ export default function Footer() {
                     </ul>
 
                     <ul>
-                        <li>Faydalı keçidlər</li>
                         <li>
-                            <Link href='#'>Kariyera</Link>
+                            {t('mavigation.title')}
                         </li>
                         <li>
-                            <Link href='#'>Brendlər</Link>
+                            <Link href='#'>{t('mavigation.nav1')}</Link>
                         </li>
                         <li>
-                            <Link href='#'>FAQ</Link>
+                            <Link href='#'>{t('mavigation.nav2')}</Link>
                         </li>
                         <li>
-                            <Link href='#'>Məxfilik siyasəti</Link>
+                            <Link href='#'>{t('mavigation.nav3')}</Link>
                         </li>
                         <li>
-                            <Link href='#'>Saytdan istifadə qaydaları</Link>
+                            <Link href='#'>{t('mavigation.nav4')}</Link>
+                        </li>
+                        <li>
+                            <Link href='#'>{t('mavigation.nav5')}</Link>
                         </li>
                     </ul>
                 </nav>
@@ -135,7 +144,7 @@ export default function Footer() {
 
                 <div className={s.copy}>
                     <h6>
-                    © 2024 Caspian Cable Systems-Bütün hüquqlar qorunur.
+                    {t('copy')}
                     </h6>
                 </div>
             </div>

@@ -1,0 +1,68 @@
+{
+    "header" : {
+        "homePage" : "Ana səhifə",
+        "productsPage" : "Məhsullar",
+        "projectsPage" : "Layihələr",
+        "arg" : {
+            "argPage" : "AR-G",
+            "laboratoryPage" : "Laboratoriya",
+            "certificatesPage" : "Sertifikatlar"
+        },
+        "newsPage" : "Xəbərlər",
+        "blogsPage": "Bloqlar",
+        "aboutPage" : "Haqqımızda",
+        "contactPage" : "Əlaqə"
+    },
+    "home" : {
+        "introBtn": "Ətraflı öyrən",
+        "lastUpdateSection" : {
+            "title": "Son yeniliklər",
+            "update1" : "Podcastlar",
+            "update2" : "Bloqlar",
+            "update3" : "Xəbərlər"
+        },
+        "trackOrderSection" : {
+            "title" : "Sifarişinizi izləyin!",
+            "order" : "Sifariş",
+            "deliveryData" : "Gözlənilən çatdırılma"
+        },
+        "categoriesSection" : {
+            "title" : "Kateqoriyalar",
+            "btn" : "Ətraflı bax"
+        },
+        "toOfferSection" : {
+            "uploadBtn" : "Fayl yüklə",
+            "getOfferBtn" : "Təklif al"
+        },
+        "projectsSecton" : {
+            "title" : "Layihələr",
+            "showAllBtn" : "Hamısına bax"
+        },
+        "certificatesSection" : {
+            "title" : "Sertifikatlar",
+            "showAllBtn" : "Hamısına bax"
+        },
+        "partnersSection" : {
+            "title" : "Partnyorlarımız"
+        }
+    },
+    "projectPage" : {
+        "title1" : "Layihə haqqında məlumat",
+        "title2" : "Qalareya"
+    },
+    "footer" : {
+        "subscribe" : {
+            "title" : "Abunə olun",
+            "placeholder" : "E-mailinizi yazın"
+        },
+        "mavigation" : {
+            "title" : "Faydalı keçidlər",
+            "nav1" : "Kariyera",
+            "nav2" : "Brendlər",
+            "nav3" : "FAQ" ,
+            "nav4" : "Məxfilik siyasəti",
+            "nav5" : "Saytdan istifadə qaydaları"
+        },
+        "copy" : "© 2024 Caspian Cable Systems-Bütün hüquqlar qorunur."
+    }
+}

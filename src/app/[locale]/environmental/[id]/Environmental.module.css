@@ -1,0 +1,81 @@
+.new__wrapper{
+    padding:  clamp(35px, 5vw, 40px) 0;
+    background: #fff;
+
+    & h2{
+      font: clamp(30px, 3vw, 36px) Helvetica;
+      margin: 0 0 clamp(20px, 3vw, 40px);
+    }
+}
+.new__img{
+    max-height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+  
+}
+
+.news__info{
+    & h1{
+        font: 700 clamp(28px, 3vw, 36px) Helvetica;
+        margin: clamp(30px, 3vw, 60px) 0 clamp(15px, 3vw, 30px);
+    }
+}
+
+.desc{
+    
+    & ul, & ol{
+      padding: 0 0 0 20px;
+      list-style: initial;
+    }
+    & li, & p{
+      font: clamp(18px, 3vw, 20px) Helvetica;
+      line-height: 1.5;
+      margin: 0 0 10px 0;
+    }
+    & em{
+      font-style: italic;
+    }
+    & strong{
+      font-weight: 600;
+    }
+  }
+
+  .gallery{
+    margin: clamp(100px,4vw, 160px) 0 clamp(40px, 4vw, 80px) ;
+    & .blog__slide{
+      cursor: pointer;
+    }
+  }
+
+
+  .videos{
+    & .blog__slide{
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        transition: all .4s ease-in-out;
+        background: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='-1 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%23000000'%3e%3cg id='SVGRepo_bgCarrier' stroke-width='0'%3e%3c/g%3e%3cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3e%3c/g%3e%3cg id='SVGRepo_iconCarrier'%3e%3ctitle%3eplay [%231000]%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cdefs%3e%3c/defs%3e%3cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cg id='Dribbble-Light-Preview' transform='translate(-65.000000, -3803.000000)' fill='%23fff'%3e%3cg id='icons' transform='translate(56.000000, 160.000000)'%3e%3cpath d='M18.074,3650.7335 L12.308,3654.6315 C10.903,3655.5815 9,3654.5835 9,3652.8985 L9,3645.1015 C9,3643.4155 10.903,3642.4185 12.308,3643.3685 L18.074,3647.2665 C19.306,3648.0995 19.306,3649.9005 18.074,3650.7335' id='play-[%231000]'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e") center/cover;
+        display: block;
+        transform-origin: 0 0;
+      }
+      &:hover{
+        &::after{
+          rotate: 360deg
+          ;
+        }
+      }
+      & video{
+        width: 100%;
+      }
+    }
+  }
+
+ 

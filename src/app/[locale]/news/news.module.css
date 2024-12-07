@@ -1,0 +1,155 @@
+.top__news {
+  display: grid;
+  grid-template-areas: 'one two five'
+    'three four five';
+  gap: 10px;
+
+  & .news {
+    position: relative;
+    transition: all .4s ease-in-out;
+    overflow: hidden;
+    height: 300px;
+
+    &:hover {
+      box-shadow: 0 0 10px 2px #808080;
+
+      & img {
+        scale: 1.05;
+      }
+    }
+
+    &:nth-child(1) {
+      grid-area: one;
+    }
+
+    &:nth-child(2) {
+      grid-area: two;
+    }
+
+    &:nth-child(3) {
+      grid-area: three;
+    }
+
+    &:nth-child(4) {
+      grid-area: four;
+    }
+
+    &:nth-child(5) {
+      grid-area: five;
+      height: 610px;
+    }
+
+    & img {
+      width: 100%;
+      transition: all .9s ease-in-out;
+    }
+  }
+
+  & h4 {
+    position: absolute;
+    color: #fff;
+    font: 700 clamp(18px, 2vw, 22px) Helvetica;
+    left: 0;
+    bottom: 0;
+    padding: 25px 18px;
+    backdrop-filter: blur(5px);
+    background: #ffffff32;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
+
+  & a {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.all__news {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: clamp(100px, 5vw, 208px) clamp(40px, 4vw, 90px);
+  gap: clamp(30px, 2vw, 46px);
+
+  & img {
+    width: 100%;
+    transition: all .9s ease-in-out;
+    height: 300px;
+  }
+
+  & .news {
+    border-radius: 24px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    padding: 0 0 19px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & h4 {
+    color: #2A282F;
+    font: 700 clamp(18px, 2vw, 22px) Helvetica;
+    padding: 19px 16px 19px;
+
+  }
+  & .news__desc{
+    margin-top: auto;
+    & * {
+      display: none;
+    }
+    & p:first-child{
+      display: -webkit-box;
+
+    }
+  }
+
+  & p {
+    font: 14px Helvetica;
+    color: #625F68;
+    padding: 0 19px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;   
+  }
+
+  & a {
+    position: absolute;
+    inset: 0;
+  }
+
+}
+
+@media (width < 800px) {
+  .top__news {
+    display: grid;
+    grid-template-areas: 'five five'
+      'one two '
+      'three four '
+    ;
+
+    & div.news{
+      height: 300px !important;
+    }
+  }
+}
+
+@media (width < 500px) {
+  .all__news {
+    grid-template-columns: 1fr;
+
+  }
+
+  .top__news {
+    display: grid;
+    grid-template-areas: 'one'
+      'two'
+      'three'
+      'four'
+      'five'
+    ;
+
+
+  }
+}

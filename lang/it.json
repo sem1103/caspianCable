@@ -1,0 +1,68 @@
+{
+  "header": {
+    "homePage": "Pagina principale",
+    "productsPage": "Prodotti",
+    "projectsPage": "Progetti",
+    "arg": {
+      "argPage": "AR-G",
+      "laboratoryPage": "Laboratorio",
+      "certificatesPage": "Certificati"
+    },
+    "newsPage": "Notizie",
+    "blogsPage": "Blog",
+    "aboutPage": "Chi siamo",
+    "contactPage": "Contatti"
+  },
+  "home": {
+    "introBtn": "Scopri di più",
+    "lastUpdateSection": {
+      "title": "Ultimi aggiornamenti",
+      "update1": "Podcast",
+      "update2": "Blog",
+      "update3": "Notizie"
+    },
+    "trackOrderSection": {
+      "title": "Traccia il tuo ordine!",
+      "order": "Ordine",
+      "deliveryData": "Consegna prevista"
+    },
+    "categoriesSection": {
+      "title": "Categorie",
+      "btn": "Visualizza di più"
+    },
+    "toOfferSection": {
+      "uploadBtn": "Carica file",
+      "getOfferBtn": "Richiedi offerta"
+    },
+    "projectsSecton": {
+      "title": "Progetti",
+      "showAllBtn": "Vedi tutti"
+    },
+    "certificatesSection": {
+      "title": "Certificati",
+      "showAllBtn": "Vedi tutti"
+    },
+    "partnersSection": {
+      "title": "I nostri partner"
+    }
+  },
+  "projectPage": {
+    "title1": "Informazioni sul Progetto",
+    "title2": "Galleria"
+  },
+  "footer": {
+    "subscribe": {
+      "title": "Iscriviti",
+      "placeholder": "Inserisci la tua email"
+    },
+    "mavigation": {
+      "title": "Link utili",
+      "nav1": "Carriere",
+      "nav2": "Marchi",
+      "nav3": "FAQ",
+      "nav4": "Politica sulla privacy",
+      "nav5": "Termini di utilizzo"
+    },
+    "copy": "© 2024 Caspian Cable Systems - Tutti i diritti riservati."
+  }
+}
