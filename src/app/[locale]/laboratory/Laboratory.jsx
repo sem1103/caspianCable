@@ -1,6 +1,6 @@
 'use client'
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import s from './Laboratory.module.css';
 import 'swiper/css';
 
@@ -15,16 +15,16 @@ import Pagin from '@/components/Pagin/Pagin';
 
 export default function Laboratory() {
     const locale = useLocale();
+    const t = useTranslations('laboratoryPage')
     const params = useSearchParams();
-    const [page, setPage] = useState(params.get('page') == null ? 1 : params.get('page')) ;
+    const [page, setPage] = useState(params.get('page') == null ? 1 : params.get('page'));
     const { laboratoryDevices, laboratoryResults, fetcLaboratory } = useDataStore();
-  
-   
+
+
 
     useEffect(() => {
         !Object.keys(laboratoryDevices).lenth && fetcLaboratory(locale, page)
     }, [locale]);
-
 
     
 
@@ -33,7 +33,7 @@ export default function Laboratory() {
             <div className='main__container'>
                 <div className={s.devices}>
                     <h2>
-                        Cihazlar
+                        {t('title1')}
                     </h2>
 
                     <div className={s.devices__wrapper}>
@@ -54,9 +54,11 @@ export default function Laboratory() {
                     <Pagin totalCount={laboratoryDevices.count} fetchData={fetcLaboratory} />
                 </div>
 
-                <div className={s.test__results}>
+                {
+                    laboratoryResults.length ?
+                    <div className={s.test__results}>
                     <h2>
-                        Test nəticələri
+                        {t('title2')}
                     </h2>
                     <Swiper
                         spaceBetween={12}
@@ -74,10 +76,10 @@ export default function Laboratory() {
                     >
                         {
                             laboratoryResults.map(item => {
-                                return(
+                                return (
                                     <SwiperSlide>
-                                    <div className={s.blog__slide}>
-                                    <svg
+                                        <div className={s.blog__slide}>
+                                            <svg
                                                 height="140"
                                                 version="1.1"
                                                 id="Layer_1"
@@ -126,19 +128,19 @@ export default function Laboratory() {
                                                     ></path>
                                                 </g>
                                             </svg>
-                                        <Link href={item.result_image}  target='_blank'/>
-                                    </div>
-                                </SwiperSlide>
+                                            <Link href={item.result_image} target='_blank' />
+                                            <h4>{item.name}</h4>
+                                        </div>
+                                    </SwiperSlide>
                                 )
                             })
                         }
-                       
-
-
-
-
                     </Swiper>
                 </div>
+                :
+                ''
+                }
+                
             </div>
         </section>
     )

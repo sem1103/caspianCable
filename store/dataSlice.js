@@ -13,6 +13,7 @@ const useDataStore = create((set) => ({
    news : [],
    blogs : [],
    aboutContent : [],
+   teams : [],
    environmentalPolicy : [],
    laboratoryDevices : {},
    laboratoryResults : [],
@@ -73,17 +74,31 @@ const useDataStore = create((set) => ({
    fetcAboutContent : async (lang) =>{
     const { baseApi } = useDataStore.getState();
     const data = await fetch(`${baseApi}${lang}/api/about/`).then(res => res.json())
-    const data2 = await fetch(`${baseApi}${lang}/api/policies/`).then(res => res.json())
+    const data2 = await fetch(`${baseApi}${lang}/api/policies/`).then(res => res.json());
+    const teamsData = await fetch(`${baseApi}${lang}/api/teams/`).then(res => res.json());
     set({ aboutContent: data.results });
     set({ environmentalPolicy: data2.results });
+    set({ teams: teamsData.results });
     
    } ,
    fetcLaboratory : async (lang, page) =>{
     const { baseApi } = useDataStore.getState();
     const data = await fetch(`${baseApi}${lang}/api/devices/?page=${page}`).then(res => res.json())
     const data2 = await fetch(`${baseApi}${lang}/api/device_test_results/`).then(res => res.json())
+
+    const arr = data.results.reduce((acc, item) => {
+      item.test_results.forEach(result => {
+        
+        acc.push({
+          ...result,
+          name: `${item.name} - ${result.name}`
+        })
+      } )
+      return acc
+    },[])
+    
     set({ laboratoryDevices: data });
-    set({ laboratoryResults: data2.results });
+    set({ laboratoryResults: arr });
     
    },
    fetchCertificates : async (lang, page) =>{
@@ -101,6 +116,7 @@ const useDataStore = create((set) => ({
     set({news : []});
     set({blogs : []});
     set({aboutContent : []});
+    set({teams : []});
     set({environmentalPolicy : []});
     set({laboratoryDevices : {}});
     set({laboratoryResults : []});

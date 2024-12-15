@@ -2,6 +2,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import s from "./page.module.css";
+import "yet-another-react-lightbox/styles.css";
+
 import Link from "next/link";
 import { useEffect, useRef, useState } from 'react';
 import 'swiper/css/pagination';
@@ -251,7 +253,7 @@ export default function Home() {
 
         <div className={s.projects__wrapper}>
           {
-            projects.map(item => {
+            projects.slice(0,1).map(item => {
               console.log(item);
 
               return (
@@ -286,6 +288,19 @@ export default function Home() {
       </section>
 
       <section className={`${s.certificate} main__container`}>
+      <Lightbox
+        open={showImg}
+        close={() => setShowImg(false)}
+        plugins={[Zoom]}
+        index={currentImg}
+        slides={
+          certificates?.results?.slice(0,3).map(item => {
+            return {
+              src: item.certificate
+            }
+          })
+        }
+      />
         <div className={s.title}>
           <h2>
             {t('certificatesSection.title')}
@@ -320,19 +335,7 @@ export default function Home() {
 
       </section>
 
-      <Lightbox
-        open={showImg}
-        close={() => setShowImg(false)}
-        plugins={[Zoom]}
-        index={currentImg}
-        slides={
-          certificates?.results?.map(item => {
-            return {
-              src: item.certificate
-            }
-          })
-        }
-      />
+     
 
         {
           partners.length ? 

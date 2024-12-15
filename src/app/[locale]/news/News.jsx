@@ -16,13 +16,13 @@ export default function News() {
     !news.length && fetchNews(locale);
   }, [locale]);
 
-  console.log();
+console.log(news);
 
 
   return (
     <section className={s.news__page}>
       {
-        news.length >= 5 &&
+        news.length >= 5 ?
         <div className={s.top__news}>
 
           {
@@ -37,11 +37,25 @@ export default function News() {
             })
           }
         </div>
+        :
+        ''
       }
 
       <div className={s.all__news}>
         {
+          news.length >= 5 ?
           news.slice(5).map(item => {
+            return (
+              <div className={s.news}>
+                <img src={item.image} alt="" />
+                <h4>{item.title}</h4>
+                <div className={s.news__desc}  dangerouslySetInnerHTML={{__html : item.text}}/>
+                <Link href={`/news/${item.id}`} />
+              </div>
+            )
+          })
+          :
+          news.map(item => {
             return (
               <div className={s.news}>
                 <img src={item.image} alt="" />

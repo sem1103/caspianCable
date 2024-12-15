@@ -49,5 +49,9 @@
          position: absolute;
          inset: 0;
         }
+        & h4{
+            font: 600 clamp(16px, 2vw, 18px) Helvetica;
+            margin: 10px 0 0 0 ;
+        }
     }
 }

@@ -50,6 +50,10 @@
     "title1": "Proje Hakkında Bilgi",
     "title2": "Galeri"
   },
+  "laboratoryPage": {
+    "title1": "Cihazlar",
+    "title2": "Test Sonuçları"
+},
   "footer": {
     "subscribe": {
       "title": "Abone ol",

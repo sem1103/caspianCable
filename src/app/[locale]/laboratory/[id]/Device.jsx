@@ -5,7 +5,7 @@ import s from './Device.module.css'
 import 'swiper/css';
 
 import 'video-react/dist/video-react.css';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import useDataStore from '../../../../../store/dataSlice';
@@ -14,6 +14,8 @@ import Link from 'next/link';
 
 
 export default function Device() {
+    const t = useTranslations('laboratoryPage')
+
   const {baseApi} = useDataStore();
   const locale = useLocale();
   const params = useParams();
@@ -29,7 +31,6 @@ export default function Device() {
     fetchDeviceDetail(locale)
   }, [locale]);
 
-  console.log(device);
   
   return (
     <div className={s.lab_inner}>
@@ -43,9 +44,11 @@ export default function Device() {
         </div>
         <div className={s.lab_inner_content} dangerouslySetInnerHTML={{__html: device?.content}} />
 
-        <div className={s.test__results}>
+        {
+                    device?.test_results.length ?
+                    <div className={s.test__results}>
                     <h2>
-                        Test nəticələri
+                        {t('title2')}
                     </h2>
                     <Swiper
                         spaceBetween={12}
@@ -63,10 +66,10 @@ export default function Device() {
                     >
                         {
                             device?.test_results.map(item => {
-                                return(
+                                return (
                                     <SwiperSlide>
-                                    <div className={s.blog__slide}>
-                                    <svg
+                                        <div className={s.blog__slide}>
+                                            <svg
                                                 height="140"
                                                 version="1.1"
                                                 id="Layer_1"
@@ -115,16 +118,18 @@ export default function Device() {
                                                     ></path>
                                                 </g>
                                             </svg>
-                                        <Link href={item.result_image}  target='_blank'/>
-                                    
-                                    </div>
-                                </SwiperSlide>
+                                            <Link href={item.result_image} target='_blank' />
+                                            <h4>{`${device.name} - ${item.name}`}</h4>
+                                        </div>
+                                    </SwiperSlide>
                                 )
                             })
                         }
-                       
                     </Swiper>
                 </div>
+                :
+                ''
+                }
       </div>
     </div>
   )

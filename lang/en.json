@@ -50,6 +50,10 @@
         "title1": "Information About the Project",
         "title2": "Gallery"
     },
+    "laboratoryPage": {
+    "title1": "Equipment",
+    "title2": "Test Results"
+},
     "footer": {
         "subscribe": {
             "title": "Subscribe",

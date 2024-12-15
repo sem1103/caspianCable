@@ -50,6 +50,10 @@
     "title1": "Informazioni sul Progetto",
     "title2": "Galleria"
   },
+  "laboratoryPage": {
+    "title1": "Apparecchiature",
+    "title2": "Risultati dei test"
+},
   "footer": {
     "subscribe": {
       "title": "Iscriviti",

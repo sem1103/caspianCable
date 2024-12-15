@@ -50,6 +50,10 @@
         "title1" : "Layihə haqqında məlumat",
         "title2" : "Qalareya"
     },
+    "laboratoryPage" :{
+        "title1" : "Cihazlar",
+        "title2" : "Test nəticələri"
+    },
     "footer" : {
         "subscribe" : {
             "title" : "Abunə olun",
