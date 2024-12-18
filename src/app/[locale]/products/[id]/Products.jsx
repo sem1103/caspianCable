@@ -1,12 +1,15 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import s from './Products.module.css'
+import "swiper/css";
+
 import { Tooltip } from "@nextui-org/tooltip";
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation'
 import useDataStore from '../../../../../store/dataSlice';
 import { useLocale } from 'next-intl';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 
 
@@ -22,19 +25,28 @@ export default function Products() {
     const [hoverRating, setHoverRating] = useState(0);
     const [filterModal, setFilterModal] = useState(false);
     const [activeFilters, setActiveFilters] = useState([1]);
-    const [activeCategory, setActiveCategory] = useState(null);
     const [activeCategoryId, setActiveCategoryId] = useState(localStorage.selectCategory == null ? null : localStorage.selectCategory);
+    const [activeCategorySlide, setActiveCategorySlide] = useState(null);
+    const categorySlideRef = useRef(null);
 
 
 
-
-    const handleRatingClick = (index) => {
-        setRating(++index);
+    const renderCategories = (categories) => {
+        return (
+            <ul className={s.sub__category}>
+                {categories.map((item) => (
+                    <li key={item.id}>
+                        <label>
+                            <input type="radio" name="category" />
+                            {item.name}
+                        </label>
+                        {item.children && item.children.length > 0 && renderCategories(item.children)}
+                    </li>
+                ))}
+            </ul>
+        );
     };
 
-    const handleMouseEnter = (index) => {
-        setHoverRating(++index);
-    };
 
     const handleMouseLeave = () => {
         setHoverRating(0);
@@ -58,8 +70,11 @@ export default function Products() {
         }
 
         if (!allProducts.length) fetchProducts(locale);
+       
 
     }, [locale]);
+
+
 
 
 
@@ -77,16 +92,27 @@ export default function Products() {
             const activeItem = parentCategories.find(
                 item => item.id == +activeCategoryId
             );
+            setActiveCategorySlide(parentCategories.findIndex(
+                (item) => item.id == activeCategoryId
+              ))
 
+              if (activeCategorySlide != -1) {
+                categorySlideRef.current.swiper.slideTo(activeCategorySlide);
+              }
 
+              console.dir(categorySlideRef.current);
+              
             if (activeItem) {
                 router.push(`/products/${activeItem.slug}`);
             }
+
+            
         }
     }, [parentCategories, activeCategoryId]);
 
 
-
+    console.log(activeCategorySlide);
+    
 
 
 
@@ -128,7 +154,13 @@ export default function Products() {
 
                 <div>
                     <div className={`${s.filter__item} ${s.border}  ${activeFilters.includes(1) ? s.active__filter : ''}`}>
-                        <h3 onClick={() => toggleFilter(1)}>Yanğln siqnalizasiya kabelləri</h3>
+                        <h3 onClick={() => toggleFilter(1)}>
+                            {
+                                parentCategories.map(item => {
+                                    if (item.id == activeCategoryId) return item.name
+                                })
+                            }
+                        </h3>
                         <ul className={`${s.filters} `}>
                             {
                                 parentCategories.map((item, index) => {
@@ -136,10 +168,18 @@ export default function Products() {
                                         return (
                                             item.children.map(cat => {
                                                 return (
-                                                    <li><label className={s.active}>
+                                                    <li><label >
                                                         <input type="radio" name="category" />
                                                         {cat.name}
-                                                    </label></li>
+                                                    </label>
+
+                                                        {
+                                                            cat?.children.length ?
+                                                                renderCategories(cat.children)
+                                                                :
+                                                                ''
+                                                        }
+                                                    </li>
                                                 )
                                             })
                                         )
@@ -151,53 +191,9 @@ export default function Products() {
                         </ul>
                     </div>
 
-                    <div className={`${s.filter__item}   ${activeFilters.includes(2) ? s.active__filter : ''}`}>
-                        <h3 onClick={() => toggleFilter(2)}>Yanğln siqnalizasiya kabelləri</h3>
-                        <ul className={`${s.filters} `}>
-                            {
-                                parentCategories.map((item, index) => {
-                                    if (activeCategoryId == item.id) {
-                                        return (
-                                            item.children.map(cat => {
-                                                return (
-                                                    <li><label className={s.active}>
-                                                        <input type="radio" name="category" />
-                                                        {cat.name}
-                                                    </label></li>
-                                                )
-                                            })
-                                        )
-                                    }
 
-                                })
-                            }
 
-                        </ul>
-                    </div>
 
-                    <div className={`${s.filter__item}  ${activeFilters.includes(3) ? s.active__filter : ''}`}>
-                        <h3 onClick={() => toggleFilter(3)}>Yanğln siqnalizasiya kabelləri</h3>
-                        <ul className={`${s.filters} `}>
-                            {
-                                parentCategories.map((item, index) => {
-                                    if (activeCategoryId == item.id) {
-                                        return (
-                                            item.children.map(cat => {
-                                                return (
-                                                    <li><label className={s.active}>
-                                                        <input type="radio" name="category" />
-                                                        {cat.name}
-                                                    </label></li>
-                                                )
-                                            })
-                                        )
-                                    }
-
-                                })
-                            }
-
-                        </ul>
-                    </div>
 
 
                 </div>
@@ -211,20 +207,28 @@ export default function Products() {
                         <img src="/assets/img/filterBtn.png" alt="" />
                     </button>
 
-                    <ul className={s.category}>
-
+                    <div className={s.category}>
+                    <Swiper
+                      ref={categorySlideRef}
+                        slidesPerView={3}
+                        spaceBetween={30}
+                        
+                    >
                         {
-                            parentCategories.map(item => {
+                            parentCategories.map((item,ind) => {
+                                
                                 return (
-                                    <li><Link href={`/products/${item.slug}`} className={`${activeCategoryId == item.id ? s.active : ''}`}>
-                                        {item.name}
-                                    </Link></li>
+                                    <SwiperSlide>
+                                        <li><Link href={`/products/${item.slug}`} className={`${activeCategoryId == item.id ? s.active : ''}`}>
+                                            {item.name}
+                                        </Link></li>
+                                    </SwiperSlide>
                                 )
                             })
                         }
+                    </Swiper>
+                    </div>
 
-
-                    </ul>
 
                     <button className={s.search}>
                         <svg width={22} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

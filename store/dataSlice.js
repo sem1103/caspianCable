@@ -27,6 +27,7 @@ const useDataStore = create((set) => ({
     const { baseApi } = useDataStore.getState();
     const data = await fetch(`${baseApi}${lang}/api/categories/`).then(res => res.json())
     
+    
     set({ parentCategories : data.results
         .filter(item => item.parent_category === null) 
         .map(item => ({

@@ -47,6 +47,7 @@ export default function Home() {
 
 
 
+
   return (
     <div className={s.home__page}>
       <section className={s.intro} style={{backgroundImage : `url(${introSlider[activeIndex]?.image})`}}>
@@ -59,7 +60,6 @@ export default function Home() {
             dynamicBullets: true,
           }}
          onSlideChange={(swiper) => {
-      
           setActiveIndex(swiper.activeIndex);
           
          }}
@@ -191,7 +191,7 @@ export default function Home() {
              <h2>
           {t('categoriesSection.title')}
         </h2>
-
+        
         <div className={s.categories__wrapper}>
           {
             parentCategories.map(item => {
@@ -202,7 +202,7 @@ export default function Home() {
                     item.name
                   }</h3>
                   <p>{
-                    item.child_count
+                    item.children.length
                   }</p>
                   <Link href={`/products/${item.slug}`} className={`btn`}>
                     {t('categoriesSection.btn')}</Link>
@@ -254,7 +254,6 @@ export default function Home() {
         <div className={s.projects__wrapper}>
           {
             projects.slice(0,1).map(item => {
-              console.log(item);
 
               return (
                 <div className={s.projects__item}>
@@ -352,7 +351,7 @@ export default function Home() {
               spaceBetween={50}
               slidesPerView={2}
               loop={true}
-              onSlideChange={() => console.log('slide change')}
+              onSlideChange={() => {}}
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
               }}

@@ -18,10 +18,10 @@
     & .filter {
         position: sticky;
         top: 130px;
-        overflow: auto;
         height: 70vh;
         max-width: 360px;
         width: 100%;
+        overflow-y: auto;
         padding: 24px clamp(20px, 4vw, 60px);
         background: #fff;
         border-radius: 10px;
@@ -81,7 +81,7 @@
         cursor: pointer;
         display: flex;
         align-items: center;
-        margin: 0 0 15px 0;
+       
 
         & input {
             margin: 0 5px 0 0;
@@ -123,19 +123,51 @@
 
     & .products {
         flex: 1;
-
+        width: 100%;
+        min-width: 0;
     }
 }
+
+
 
 .filters {
     max-height: 0;
     transition: all .4s ease-in-out;
     overflow: hidden;
+
+    & li{
+        position: relative;
+        & label{
+            padding: 0 0 10px 0;
+
+        }
+      
+        & > ul{
+            top: 0;
+            left: 100%;
+            width: 100%;
+         
+        }
+        &:hover {
+            & > ul {
+                display: block;
+            }
+        }
+    }
+}
+.sub__category{
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 15px;
+    margin: 0 0 10px 0;
+    border-radius:   0 0  0 10px ;
+    box-shadow: 0 0 10px #e4e4e487;
 }
 
 .active__filter {
     & .filters {
-        max-height: 400px;
+        max-height: 600px;
+        overflow: initial;
     }
 
     & h3::after {
@@ -149,14 +181,15 @@
     gap: 10px;
 
     & .category {
-        display: flex;
+        width: 100%;
         padding: 20px 33px;
         background-color: #fff;
         border-radius: 8px;
-        gap: 25px clamp(20px, 6vw, 60px);
-        flex-wrap: wrap;
+        overflow: hidden;
+        
 
         & a {
+            display: inline-block;
             font: clamp(18px, 2vw, 22px) Helvetica;
             padding: 8px 7px;
             border-radius: 7px;
@@ -173,6 +206,7 @@
         padding: 20px 25px;
         background-color: #fff;
         border-radius: 8px;
+        min-width: 70px;
     }
 }
 
@@ -336,6 +370,9 @@
     .update {
         margin: 0 20px 0 0;
     }
+
+    
+    
 }
 
 @media (width < 830px) {
