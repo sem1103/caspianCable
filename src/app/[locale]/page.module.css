@@ -4,7 +4,7 @@
   & section {
     margin-bottom: clamp(50px, 8vw, 116px);
 
-    h2 {
+    & h2 {
       font: 400 clamp(25px, 5vw, 50px) Helvetica;
       color: #000;
     }
